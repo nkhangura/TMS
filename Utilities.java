@@ -1,8 +1,8 @@
-package com.main;
+package com.workLog;
 
 import java.util.List;
 
-import com.main.model.WorkLog;
+import com.workLog.WorkLog;
 
 public class Utilities {
 
