@@ -95,12 +95,12 @@ public class DB {
   // Option 1: Create worklog
 	public void createWorklog(WorkLog worklog) {
 		dbConnect();
-		String sql = "insert into WorkLog('idWorkLog, 'description', 'creation_date')" + "values (?,?,?)";
+		String sql = "insert into WorkLog('description', 'creation_date','Employee_idEmployee)" + "values (?,?,?)";
 		try {
 			PreparedStatement pstmt = con.prepareStatement(sql);
-			pstmt.setInt(1, worklog.getId());
-			pstmt.setString(2, worklog.getDescription());
-			pstmt.setString(3, worklog.getCreationDate());
+			pstmt.setString(1, worklog.getDescription());
+			pstmt.setString(2, worklog.getCreationDate());
+			pstmt.setInt(3, worklog.getEmp_id());
 			pstmt.executeUpdate();
 		}
 		catch( SQLException e) {
@@ -134,13 +134,11 @@ public class DB {
 	public void updateWorkLogInfo(WorkLog wLog) {
 
 		dbConnect();
-		String sql = "update WorkLog set description = ? where idWorkLog = ?";//, creationDate = ?, eid = ?";
+		String sql = "update WorkLog set description = ? where idWorkLog = ?";
 		try {
 			PreparedStatement pstmt = con.prepareStatement(sql);
 			pstmt.setString(1, wLog.getDescription());
 			pstmt.setInt(2, wLog.getId());
-	//		pstmt.setString(2, wLog.getCreationDate());
-	//		pstmt.setInt(3, wLog.getEmp_id());
 			pstmt.executeUpdate();
 		}
 		catch(SQLException e) {
@@ -153,11 +151,11 @@ public class DB {
 	// Option 3: Delete worklog
 	public void deleteWorklog(int worklogToDelete) {
 		dbConnect();
-		String sql = "delete from WorkLog where idWorkLog = " + worklogToDelete;
+		String sql = "delete from WorkLog where idWorkLog = ?" + worklogToDelete;
 		
 		try {
 			PreparedStatement pstmt = con.prepareStatement(sql);
-			//pstmt.setInt(1, worklogToDelete);
+			pstmt.setInt(1, worklogToDelete);
 			pstmt.executeUpdate();
 		} 
 		catch (SQLException e) {
@@ -171,10 +169,10 @@ public class DB {
 	public List<WorkLog> getEmployeeWorkLogs(int empid) {
 		dbConnect();
 		List<WorkLog> worklogList = new ArrayList<>();
-		String sql = "select * from worklog where Employee_idEmployee = "+ empid;
+		String sql = "select * from worklog where Employee_idEmployee = ?"+ empid;
 		try {
 			PreparedStatement pstmt = con.prepareStatement(sql);
-			//pstmt.setInt(1, empid);
+			pstmt.setInt(1, empid);
 			ResultSet rst = pstmt.executeQuery();
 			
 			while(rst.next()) {

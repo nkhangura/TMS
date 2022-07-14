@@ -9,6 +9,7 @@ Team members and tasks:
         2. Create project stories
         3. Update/Delete project details
    - Completed tasks:
+        1. Menu dashboard
    
 2. Nicky
    - Assigned tasks:
@@ -56,3 +57,24 @@ Team members and tasks:
 Future scope
 ------------
 1. Implement a Point System after the completion of each story.
+
+------------
+
+[Google Docs Link](https://docs.google.com/document/d/1wg74vzoU9hXGs3bU7uZME8QdFtB5F7EDd6i17VqK3Do/edit?usp=sharing)
+
+-------------
+# ER Diagram
+
+![ER Diagram](https://github.com/nkhangura/TMS/blob/ReadMe-Updates/Screenshot%202022-07-14%20151928.png)
+-------------
+# Screenshots
+
+## PO Profile
+
+![PO Profile](https://github.com/nkhangura/TMS/blob/ReadMe-Updates/profile%20system%20for%20employee.png)
+![PO Table](https://github.com/nkhangura/TMS/blob/ReadMe-Updates/PO%20Table.png)
+
+## Employee Profile
+![Employee Profile](https://github.com/nkhangura/TMS/blob/ReadMe-Updates/profile%20system%20for%20employee.png)
+![Employee Table](https://github.com/nkhangura/TMS/blob/ReadMe-Updates/Employee%20Table.png)
+
