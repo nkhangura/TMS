@@ -9,6 +9,7 @@ Team members and tasks:
         2. Create project stories
         3. Update/Delete project details
    - Completed tasks:
+        1. Menu dashboard
    
 2. Nicky
    - Assigned tasks:
