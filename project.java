@@ -7,17 +7,22 @@ public class project {
         String project, projectD, projectAssigned;
         int tier;
         System.out.println("\nEnter the project name: ");
-        sc.nextLine();
+        // sc.nextLine();
         project = sc.nextLine();
         p1.setProject(project);
+        // System.out.println(project);
         System.out.println("Enter the project description: ");
-        sc.nextLine();
+        // sc.nextLine();
         projectD = sc.nextLine();
         p1.setProjectD(projectD);
+        // System.out.println(projectD);
+
         System.out.println("Enter the employee username to assign to: ");
-        sc.nextLine();
+        // sc.nextLine();
         projectAssigned = sc.nextLine();
         p1.setAssignedTo(projectAssigned);
+        // System.out.println(projectAssigned);
+
         System.out.println("Enter the priority level: ");
         tier = sc.nextInt();
         p1.setTier(tier);
