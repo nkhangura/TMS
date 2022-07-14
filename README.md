@@ -56,3 +56,7 @@ Team members and tasks:
 Future scope
 ------------
 1. Implement a Point System after the completion of each story.
+
+------------
+
+[Google Docs Link](https://docs.google.com/document/d/1wg74vzoU9hXGs3bU7uZME8QdFtB5F7EDd6i17VqK3Do/edit?usp=sharing)
