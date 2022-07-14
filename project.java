@@ -3,30 +3,36 @@ import java.util.Scanner;
 public class project {
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
-        projectDetails p1 = new projectDetails();
-        String project, projectD, projectAssigned;
-        int tier;
-        System.out.println("\nEnter the project name: ");
-        // sc.nextLine();
-        project = sc.nextLine();
-        p1.setProject(project);
-        // System.out.println(project);
-        System.out.println("Enter the project description: ");
-        // sc.nextLine();
-        projectD = sc.nextLine();
-        p1.setProjectD(projectD);
-        // System.out.println(projectD);
+        // projectDetails p1 = new projectDetails();
+        String name, description, creationDate, currentStatus;
+        int tier, id;
+        System.out.println();
+        System.out.println("Enter the project id: ");
+        id = sc.nextInt();
+        sc.nextLine();
+        // p1.setID(id);
 
-        System.out.println("Enter the employee username to assign to: ");
-        // sc.nextLine();
-        projectAssigned = sc.nextLine();
-        p1.setAssignedTo(projectAssigned);
-        // System.out.println(projectAssigned);
+        System.out.println("Enter the project name: ");
+        name = sc.nextLine();
+        // p1.setname(name);
+
+        System.out.println("Enter the project description: ");
+        description = sc.nextLine();
+        // p1.setdescription(description);
+
+        System.out.println("Enter the todays date: (Ex: 2021-12-23)");
+        creationDate = sc.nextLine();
+
+        System.out.println("Enter the project current status: ");
+        currentStatus = sc.nextLine();
 
         System.out.println("Enter the priority level: ");
         tier = sc.nextInt();
-        p1.setTier(tier);
-        p1.display();
+
+        System.out.println("");
+        projectDetails p2 = new projectDetails(id, name, description, creationDate, currentStatus, tier);
+
+        p2.display();
         sc.close();
     }
 }
