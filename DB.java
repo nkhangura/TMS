@@ -1,7 +1,8 @@
+package com.main;
 
-import com.main.model.WorkLog;
 
-package com.db;
+import com.workLog.WorkLog;
+
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.PreparedStatement;

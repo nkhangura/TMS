@@ -1,4 +1,4 @@
-package com.main.model;
+package com.workLog;
 
 public class WorkLog {
 	private int id;
