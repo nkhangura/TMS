@@ -95,12 +95,12 @@ public class DB {
   // Option 1: Create worklog
 	public void createWorklog(WorkLog worklog) {
 		dbConnect();
-		String sql = "insert into worklog(description, creationDate, eid)" + "values (?,?,?)";
+		String sql = "insert into WorkLog('idWorkLog, 'description', 'creation_date')" + "values (?,?,?)";
 		try {
 			PreparedStatement pstmt = con.prepareStatement(sql);
-			pstmt.setString(1, worklog.getDescription());
-			pstmt.setString(2, worklog.getCreationDate());
-			pstmt.setInt(3, worklog.getEmp_id());
+			pstmt.setInt(1, worklog.getId());
+			pstmt.setString(2, worklog.getDescription());
+			pstmt.setString(3, worklog.getCreationDate());
 			pstmt.executeUpdate();
 		}
 		catch( SQLException e) {
@@ -113,16 +113,16 @@ public class DB {
 	public WorkLog getWorkLogToUpdate(int worklogID) {
 		dbConnect();
 		WorkLog worklog = new WorkLog();
-		String sql = "select * from worklog where id = ?";
+		String sql = "select * from WorkLog where idWorkLog = ?";
 		try {
 			PreparedStatement pstmt = con.prepareStatement(sql);
 			pstmt.setInt(1, worklogID);
 			ResultSet rst = pstmt.executeQuery();
 			rst.next();
-			worklog = new WorkLog(rst.getInt("id"), 
+			worklog = new WorkLog(rst.getInt("idWorkLog"), 
 					rst.getString("description"),
-					rst.getString("creationDate"),
-					rst.getInt("eid"));
+					rst.getString("creation_date"),
+					rst.getInt("Employee_idEmployee"));
 		} 
 		catch (SQLException e) {
 			e.printStackTrace();
@@ -134,7 +134,7 @@ public class DB {
 	public void updateWorkLogInfo(WorkLog wLog) {
 
 		dbConnect();
-		String sql = "update worklog set description = ? where id = ?";//, creationDate = ?, eid = ?";
+		String sql = "update WorkLog set description = ? where idWorkLog = ?";//, creationDate = ?, eid = ?";
 		try {
 			PreparedStatement pstmt = con.prepareStatement(sql);
 			pstmt.setString(1, wLog.getDescription());
@@ -153,11 +153,11 @@ public class DB {
 	// Option 3: Delete worklog
 	public void deleteWorklog(int worklogToDelete) {
 		dbConnect();
-		String sql = "delete from worklog where id = ?";
+		String sql = "delete from WorkLog where idWorkLog = " + worklogToDelete;
 		
 		try {
 			PreparedStatement pstmt = con.prepareStatement(sql);
-			pstmt.setInt(1, worklogToDelete);
+			//pstmt.setInt(1, worklogToDelete);
 			pstmt.executeUpdate();
 		} 
 		catch (SQLException e) {
@@ -171,17 +171,17 @@ public class DB {
 	public List<WorkLog> getEmployeeWorkLogs(int empid) {
 		dbConnect();
 		List<WorkLog> worklogList = new ArrayList<>();
-		String sql = "select * from worklog where eid = ?";
+		String sql = "select * from worklog where Employee_idEmployee = "+ empid;
 		try {
 			PreparedStatement pstmt = con.prepareStatement(sql);
-			pstmt.setInt(1, empid);
+			//pstmt.setInt(1, empid);
 			ResultSet rst = pstmt.executeQuery();
 			
 			while(rst.next()) {
-				int id = rst.getInt("id");
+				int id = rst.getInt("idWorkLog");
 				String description = rst.getString("description");
-				String creationDate = rst.getString("creationDate");
-				int employeeId = rst.getInt("eid");
+				String creationDate = rst.getString("creation_date");
+				int employeeId = rst.getInt("Employee_idEmployee");
 				
 				WorkLog wl = new WorkLog(id,description,creationDate,employeeId);
 				worklogList.add(wl);
@@ -198,16 +198,16 @@ public class DB {
 	public List<WorkLog> getAllWorkLogs() {
 		dbConnect();
 		List<WorkLog> worklogList = new ArrayList<>();
-		String sql = "select * from worklog";
+		String sql = "select * from WorkLog";
 		try {
 			PreparedStatement pstmt = con.prepareStatement(sql);
 			ResultSet rst = pstmt.executeQuery();
 			
 			while(rst.next()) {
-				int id = rst.getInt("id");
+				int id = rst.getInt("idWorkLog");
 				String description = rst.getString("description");
-				String creationDate = rst.getString("creationDate");
-				int employeeId = rst.getInt("eid");
+				String creationDate = rst.getString("creation_date");
+				int employeeId = rst.getInt("Employee_idEmployee");
 				
 				WorkLog wl = new WorkLog(id,description,creationDate,employeeId);
 				worklogList.add(wl);
