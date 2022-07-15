@@ -5,6 +5,7 @@ import java.util.Scanner;
 
 import com.workLog.*;
 import com.main.DB;
+import com.projects.projectDetails;
 import com.users.employeeProfile;
 import com.users.poProfile;
 
@@ -19,7 +20,7 @@ public class menus {
 	            System.out.println("------------TMS--------------");
 	            System.out.println("Enter 1: profile system");
 	            System.out.println("Enter 2: worklog system");
-	            //System.out.println("Enter 3: ");
+	            System.out.println("Enter 3: enter project information");
 	            //System.out.println("Enter 4: reset password");
 	            System.out.println("Enter 0: quit");
 	            int input = sc.nextInt();
@@ -31,10 +32,16 @@ public class menus {
 	                case 1:
 	                    profilesMenu();
 	                    mainMenu();
+	                    break;
 	                case 2:
 	                    workLogMenu();
 	                    mainMenu();
+	                    break;
 	                case 3:
+	                	projectMenu();
+	                	mainMenu();
+	                	break;
+	                case 4:
 	                    System.exit(0);
 	                    break;
 	            }
@@ -229,5 +236,40 @@ public class menus {
 
 			}
 		}
+		
+		public static void projectMenu() {
+	        Scanner sc = new Scanner(System.in);
+	        // projectDetails p1 = new projectDetails();
+	        String name, description, creationDate, currentStatus;
+	        int tier, id;
+	        System.out.println();
+	        System.out.println("Enter the project id: ");
+	        id = sc.nextInt();
+	        sc.nextLine();
+	        // p1.setID(id);
+
+	        System.out.println("Enter the project name: ");
+	        name = sc.nextLine();
+	        // p1.setname(name);
+
+	        System.out.println("Enter the project description: ");
+	        description = sc.nextLine();
+	        // p1.setdescription(description);
+
+	        System.out.println("Enter the todays date: (Ex: 2021-12-23)");
+	        creationDate = sc.nextLine();
+
+	        System.out.println("Enter the project current status: ");
+	        currentStatus = sc.nextLine();
+
+	        System.out.println("Enter the priority level: ");
+	        tier = sc.nextInt();
+
+	        System.out.println("");
+	        projectDetails p2 = new projectDetails(id, name, description, creationDate, currentStatus, tier);
+
+	        p2.display();
+	        sc.close();
 		}
+}
 
