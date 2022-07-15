@@ -38,6 +38,8 @@ Team members and tasks:
           - Display employee welcome information
       3. Menu Class
           - Menu clalss to organize main menu and sub-menus
+      4. Integration
+          - Integrate group code
 4. Pamela
    - Assigned tasks:
       1. Assign story to employees
