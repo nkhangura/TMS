@@ -81,7 +81,7 @@ Future scope
 
 ## PO Profile
 
-![PO Profile](https://github.com/nkhangura/TMS/blob/ReadMe-Updates/profile%20system%20for%20employee.png)
+![PO Profile](https://github.com/nkhangura/TMS/blob/main/Screenshots/profile%20system%20for%20PO.png)
 ![PO Table](https://github.com/nkhangura/TMS/blob/ReadMe-Updates/PO%20Table.png)
 
 ## Employee Profile
