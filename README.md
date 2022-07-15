@@ -10,6 +10,9 @@ Team members and tasks:
         3. Update/Delete project details
    - Completed tasks:
         1. Create project menu dashboard
+           -Add project name, id, description
+           -Add project creation date, and status 
+        3.  Create main menu
    
 2. Nicky
    - Assigned tasks:
