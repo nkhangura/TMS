@@ -9,7 +9,7 @@ Team members and tasks:
         2. Create project stories
         3. Update/Delete project details
    - Completed tasks:
-        1. Menu dashboard
+        1. Create project menu dashboard
    
 2. Nicky
    - Assigned tasks:
@@ -36,6 +36,8 @@ Team members and tasks:
       2. Employee profile
           - Retrieve employee contact information
           - Display employee welcome information
+      3. Menu Class
+          - Menu clalss to organize main menu and sub-menus
 4. Pamela
    - Assigned tasks:
       1. Assign story to employees
