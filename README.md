@@ -60,7 +60,13 @@ Team members and tasks:
 
 Future scope
 ------------
-1. Implement a Point System after the completion of each story.
+- Implement a Point System after the completion of each story.
+- Create a login system.
+   - Login based on role as employee or product owner.
+   - Create/update login credentials.
+- Allow users to update profile information after logging in.
+- Connect "create project" inputs to database
+- Implement more exception handling.
 
 ------------
 
