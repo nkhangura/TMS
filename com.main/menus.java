@@ -31,19 +31,16 @@ public class menus {
 	            switch (input) {
 	                case 1:
 	                    profilesMenu();
-	                    mainMenu();
 	                    break;
 	                case 2:
 	                    workLogMenu();
-	                    mainMenu();
 	                    break;
 	                case 3:
 	                	projectMenu();
-	                	mainMenu();
 	                	break;
-	                case 4:
-	                    System.exit(0);
-	                    break;
+	                default:
+	    				System.out.println("Invalid option. Please try again.");
+	    				break;
 	            }
 	        }
 		}
@@ -88,11 +85,11 @@ public class menus {
 				System.out.println("  3. Delete WorkLog");
 				System.out.println("  4. Show Employee's WorkLogs");
 				System.out.println("  5. Show All WorkLogs");
-				System.out.println("  0. To Exit");
+				System.out.println("  0. To Exit WorkLog System");
 				System.out.println("Enter your input");
 				int input = sc.nextInt();
 				if (input == 0) {
-					System.out.println("Exiting.. Bye!!");
+					System.out.println("Exiting WorkLog System...Going back to main menu.");
 					break;
 				}
 				switch(input) {
@@ -156,23 +153,10 @@ public class menus {
 					System.out.println("Enter the New WorkLog Description");
 					sc.nextLine();
 					description = sc.nextLine();
-					
-			/*
-			 *  Not sure if we should be able to update creation date and employee id
-			 */		
-					
-			/*		System.out.println("Enter the New WorkLog Creation Date");
-					sc.nextLine();
-					creationDate = sc.nextLine();
-					System.out.println("Enter the New Employee ID for this WorkLog");
-					employeeId = sc.nextInt();
-			 */				
+								
 					wLog.setDescription(description);
 					
-			/*		wLog.setCreationDate(creationDate);
-					wLog.setEmp_id(employeeId);
-					
-			 */		// Update worklog info in WorkLog table
+					// Update worklog info in WorkLog table
 					db.updateWorkLogInfo(wLog);	
 					System.out.println("WorkLog successfully updated!");
 					break;
@@ -206,20 +190,19 @@ public class menus {
 					// Delete given worklog from WorkLog table
 					db.deleteWorklog(worklogID);
 					System.out.println("WorkLog successfully deleted!");
-					//break;
+					break;
 				case 4:
-					
-					System.out.println("Showing Employee's worklogs:");
-					System.out.println("----------------------------");
 					// Restrict update operation to employee's own worklogs
 			/*
 			 * Should connect to employee to check without re-entering employee id
 			 * */
 					System.out.println("Re-enter Employee ID:");
 					empid = sc.nextInt();
+					System.out.println("Showing Employee's worklogs:");
+					System.out.println("----------------------------");
 					worklogList = db.getEmployeeWorkLogs(empid);
 					worklogList.stream().forEach(w->System.out.println(w));
-					//break;
+					break;
 				case 5:
 					// Display list with all the worklogs
 					System.out.println("Showing all worklogs:");
@@ -272,4 +255,3 @@ public class menus {
 	        sc.close();
 		}
 }
-
