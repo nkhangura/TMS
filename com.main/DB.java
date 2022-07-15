@@ -95,7 +95,7 @@ public class DB {
   // Option 1: Create worklog
 	public void createWorklog(WorkLog worklog) {
 		dbConnect();
-		String sql = "insert into WorkLog('description', 'creation_date','Employee_idEmployee)" + "values (?,?,?)";
+		String sql = "insert into worklog(description, creation_date,Employee_idEmployee)" + "values (?,?,?)";
 		try {
 			PreparedStatement pstmt = con.prepareStatement(sql);
 			pstmt.setString(1, worklog.getDescription());
@@ -113,7 +113,7 @@ public class DB {
 	public WorkLog getWorkLogToUpdate(int worklogID) {
 		dbConnect();
 		WorkLog worklog = new WorkLog();
-		String sql = "select * from WorkLog where idWorkLog = ?";
+		String sql = "select * from worklog where idWorkLog = ?";
 		try {
 			PreparedStatement pstmt = con.prepareStatement(sql);
 			pstmt.setInt(1, worklogID);
@@ -134,7 +134,7 @@ public class DB {
 	public void updateWorkLogInfo(WorkLog wLog) {
 
 		dbConnect();
-		String sql = "update WorkLog set description = ? where idWorkLog = ?";
+		String sql = "update workLog set description = ? where idWorkLog = ?";
 		try {
 			PreparedStatement pstmt = con.prepareStatement(sql);
 			pstmt.setString(1, wLog.getDescription());
@@ -151,7 +151,7 @@ public class DB {
 	// Option 3: Delete worklog
 	public void deleteWorklog(int worklogToDelete) {
 		dbConnect();
-		String sql = "delete from WorkLog where idWorkLog = ?" + worklogToDelete;
+		String sql = "delete from worklog where idWorkLog = ?";
 		
 		try {
 			PreparedStatement pstmt = con.prepareStatement(sql);
@@ -169,7 +169,7 @@ public class DB {
 	public List<WorkLog> getEmployeeWorkLogs(int empid) {
 		dbConnect();
 		List<WorkLog> worklogList = new ArrayList<>();
-		String sql = "select * from worklog where Employee_idEmployee = ?"+ empid;
+		String sql = "select * from worklog where Employee_idEmployee = ?";
 		try {
 			PreparedStatement pstmt = con.prepareStatement(sql);
 			pstmt.setInt(1, empid);
@@ -196,7 +196,7 @@ public class DB {
 	public List<WorkLog> getAllWorkLogs() {
 		dbConnect();
 		List<WorkLog> worklogList = new ArrayList<>();
-		String sql = "select * from WorkLog";
+		String sql = "select * from worklog";
 		try {
 			PreparedStatement pstmt = con.prepareStatement(sql);
 			ResultSet rst = pstmt.executeQuery();
