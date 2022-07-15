@@ -13,7 +13,8 @@ Team members and tasks:
    
 2. Nicky
    - Assigned tasks:
-        1. Determine if user is employee or project owner (PO)
+        1. Login System
+          - Determine if user is employee or project owner (PO)
           - Employee login
           - PO login
         2. Reset/Update password 
