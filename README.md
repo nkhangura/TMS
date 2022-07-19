@@ -96,7 +96,10 @@ Future scope
 Roles:
 ---------------
 Worklog table --> Pamela
+
 Stories table --> Nicky
+
 Project table --> Navroop
+
 Employee and PO table --> Omran 
  
