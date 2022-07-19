@@ -92,3 +92,11 @@ Future scope
 ![Employee Profile](https://github.com/nkhangura/TMS/blob/ReadMe-Updates/profile%20system%20for%20employee.png)
 ![Employee Table](https://github.com/nkhangura/TMS/blob/ReadMe-Updates/Employee%20Table.png)
 
+
+Roles:
+---------------
+Worklog table --> Pamela
+Stories table --> Nicky
+Project table --> Navroop
+Employee and PO table --> Omran 
+ 
